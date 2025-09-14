@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Server Minecraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F8FF;
+            color: #333;
+        }
+        .bg-beach {
+            background-image: url('https://placehold.co/1920x1080/E0F2F7/0077B6?text=Hình+nền+bờ+biển');
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background-color: #0077B6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #005A93;
+        }
+        .cmd-code {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #e0f2f7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #004d40;
+            white-space: nowrap;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <header class="bg-beach text-white py-20 px-4 flex flex-col items-center justify-center text-center relative">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 flex flex-col items-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 animate-pulse">WIKI SERVER</h1>
+            <p class="text-lg sm:text-xl font-light max-w-2xl mb-8">
+                Khám phá mọi ngóc ngách của server. Đây là nơi bạn tìm thấy tất cả thông tin, từ các lệnh cơ bản đến hướng dẫn chi tiết về các tính năng độc đáo.
+            </p>
+            <a href="#noi-dung" class="btn-primary text-base sm:text-lg">Khám Phá Ngay</a>
+        </div>
+    </header>
+
+    <nav class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-[#0077B6]">Server Wiki</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#quy-tac" class="text-[#005A93] hover:text-[#0077B6] px-3 py-2 rounded-md font-medium">Nội Quy</a>
+                        <a href="#lenh" class="text-[#005A93] hover:text-[#0077B6] px-3 py-2 rounded-md font-medium">Lệnh</a>
+                        <a href="#plugins" class="text-[#005A93] hover:text-[#0077B6] px-3 py-2 rounded-md font-medium">Plugins</a>
+                        <a href="#lien-he" class="text-[#005A93] hover:text-[#0077B6] px-3 py-2 rounded-md font-medium">Liên Hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="noi-dung" class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <section id="quy-tac" class="mb-16 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0077B6]">Nội Quy Server</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#005A93]">Không Gian Lận</h3>
+                    <p class="text-gray-600">Nghiêm cấm sử dụng bất kỳ phần mềm hay mod gian lận nào để có lợi thế không công bằng.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#005A93]">Tôn Trọng Cộng Đồng</h3>
+                    <p class="text-gray-600">Cư xử văn minh, không xúc phạm, quấy rối hay phân biệt đối xử với người chơi khác.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#005A93]">Bảo Vệ Tài Khoản</h3>
+                    <p class="text-gray-600">Luôn sử dụng lệnh bảo vệ tài khoản và không chia sẻ mật khẩu của bạn với bất kỳ ai.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lenh" class="mb-16 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0077B6]">Lệnh Hữu Ích</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-[#005A93]">EssentialsX</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <code class="cmd-code">/pay &lt;người chơi&gt; &lt;số tiền&gt;</code>
+                            <p class="mt-1 text-gray-600">Chuyển tiền cho người chơi khác.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/bal</code>
+                            <p class="mt-1 text-gray-600">Kiểm tra số dư tiền của bạn.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/sethome &lt;tên nhà&gt;</code>
+                            <p class="mt-1 text-gray-600">Đặt một điểm nhà tại vị trí hiện tại.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/home &lt;tên nhà&gt;</code>
+                            <p class="mt-1 text-gray-600">Dịch chuyển về nhà của bạn.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-[#005A93]">AuthMe & Lands</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <code class="cmd-code">/register &lt;mật khẩu&gt;</code>
+                            <p class="mt-1 text-gray-600">Đăng ký tài khoản.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/login &lt;mật khẩu&gt;</code>
+                            <p class="mt-1 text-gray-600">Đăng nhập vào server.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/lands</code>
+                            <p class="mt-1 text-gray-600">Mở giao diện quản lý vùng đất.</p>
+                        </li>
+                        <li>
+                            <code class="cmd-code">/lands claim</code>
+                            <p class="mt-1 text-gray-600">Bảo vệ vùng đất bạn đang đứng.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="plugins" class="mb-16 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0077B6]">Các Plugins Chính</h2>
+            <div class="card p-8">
+                <p class="mb-4 text-gray-600">Server của chúng tôi sử dụng các plugins sau để nâng cao trải nghiệm của bạn:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong class="text-[#005A93]">EssentialsX:</strong> Cung cấp các lệnh cơ bản và hệ thống kinh tế.</li>
+                    <li><strong class="text-[#005A93]">AuthMe:</strong> Bảo vệ tài khoản người chơi bằng hệ thống đăng nhập.</li>
+                    <li><strong class="text-[#005A93]">Lands:</strong> Cho phép người chơi bảo vệ và quản lý vùng đất của mình.</li>
+                    <li><strong class="text-[#005A93]">TradeSystem:</strong> Hỗ trợ giao dịch an toàn giữa người chơi.</li>
+                    <li><strong class="text-[#005A93]">GSit:</strong> Cho phép người chơi ngồi và bò để tăng tính chân thực.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="lien-he" class="fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0077B6]">Thông Tin Liên Hệ</h2>
+            <div class="card p-8 text-center">
+                <p class="mb-4 text-gray-600">Nếu bạn cần hỗ trợ thêm, hãy liên hệ với chúng tôi qua các kênh sau:</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                    <p><b>IP Server:</b> <code class="cmd-code">PLAY.YOURSERVER.VN</code></p>
+                    <p><b>Discord:</b> <a href="#" class="text-[#0077B6] hover:text-[#005A93] font-medium">Tham gia ngay!</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-8 mt-12 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Minecraft Server. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
