@@ -23,14 +23,21 @@
             background-position: center;
         }
         .card {
-            background-color: #e5e5e5;
+            background-color: rgba(229, 229, 229, 0.2);
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            /* Thêm hiệu ứng kính mờ vào đây */
+            backdrop-filter: blur(100px);
+            /* Thêm backdrop-filter vào transition để chuyển tiếp mượt mà */
+            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 150, 255, 0.3);
+            /* Loại bỏ hiệu ứng kính mờ khi di chuột để nội dung rõ hơn */
+            backdrop-filter: blur(0px);
+            /* Tăng độ mờ của thẻ để làm nổi bật */
+            background-color: rgba(229, 229, 229, 1);
         }
         .btn-primary {
             background-color: #0077B6;
@@ -273,6 +280,7 @@
     </script>
 </body>
 </html>
+
 
 
 
