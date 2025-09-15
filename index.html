@@ -68,7 +68,10 @@
     </style>
 </head>
 <body class="leading-relaxed">
-
+    <!-- Background Changer -->
+    <div id="background-changer">
+        <div class="bg-overlay"></div>
+    </div>
     <header class="bg-beach text-white pt-32 pb-18 px-4 flex flex-col items-center justify-center text-center relative">
         <div class="absolute inset-0 bg-black opacity-30"></div>
         <div class="relative z-10 flex flex-col items-center">
@@ -100,7 +103,10 @@
     </nav>
 
     <main id="noi-dung" class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <section id="quy-tac" class="mb-16 fade-in">
+		
+        <!-- Thay đổi URL tại đây để đổi ảnh nền cho mục "Nội Quy Server" -->
+        <section id="quy-tac" class="mb-16 fade-in" data-bg-image="https://placehold.co/1920x1080/4F6F7F/E0F2F7?text=Rule+book">
+
             <h2 class="text-3xl font-bold text-center mb-8 text-[#0093e1]">Nội Quy Server</h2>
             <div class="grid md:grid-cols-3 gap-9">
                 <div class="card p-6 text-center">
@@ -130,7 +136,9 @@
             </div>
         </section>
 
-        <section id="lenh" class="p-6 mb-16 fade-in">
+        <!-- Thay đổi URL tại đây để đổi ảnh nền cho mục "LỆNH" -->
+        <section id="lenh" class="p-6 mb-16 fade-in" data-bg-image="https://placehold.co/1920x1080/0077B6/e0f7fa?text=Commands+Terminal">
+
             <h2 class="text-3xl font-bold text-center mb-8 text-[#0093e1]">COMMANDS</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="card p-6">
@@ -252,7 +260,9 @@
                 </div>
             </div>
         </section>
-        <section id="lien-he" class="fade-in">
+        <!-- Thay đổi URL tại đây để đổi ảnh nền cho mục "Liên Hệ" -->
+        <section id="lien-he" class="fade-in" data-bg-image="https://placehold.co/1920x1080/0077B6/e0f7fa?text=Contact+Us">
+
             <h2 class="text-3xl font-bold text-center mb-8 text-[#0077B6]">Thông Tin Liên Hệ</h2>
             <div class="card p-8 text-center">
                 <p class="mb-4 text-gray-600">Nếu bạn cần hỗ trợ thêm, hãy liên hệ với chúng tôi qua các kênh sau:</p>
@@ -280,6 +290,7 @@
     </script>
 </body>
 </html>
+
 
 
 
