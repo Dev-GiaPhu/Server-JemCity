@@ -287,9 +287,53 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundChanger = document.getElementById('background-changer');
+            const sections = document.querySelectorAll('section.fade-in');
+            const header = document.querySelector('header');
+
+            const defaultBg = "url('https://placehold.co/1920x1080/4F6F7F/E0F2F7?text=JEMCITY')";
+
+            // Observer để thay đổi background khi các section nội dung hiện ra
+            const contentObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bgImage = entry.target.getAttribute('data-bg-image');
+                        if (bgImage) {
+                            backgroundChanger.style.backgroundImage = `url('${bgImage}')`;
+                        }
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 
+            });
+
+            // Observer để khôi phục background khi header hiện ra
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        backgroundChanger.style.backgroundImage = defaultBg;
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Kích hoạt khi header hiện ra 50%
+            });
+
+            // Bắt đầu theo dõi các section nội dung và header
+            sections.forEach(section => {
+                contentObserver.observe(section);
+            });
+            headerObserver.observe(header);
+        });
     </script>
 </body>
 </html>
+
 
 
 
