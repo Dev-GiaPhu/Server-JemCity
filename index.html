@@ -125,8 +125,63 @@
 
         <section id="lenh" class="p-6 mb-16 fade-in">
             <h2 class="text-3xl font-bold text-center mb-8 text-[#0093e1]">COMMANDS</h2>
-            <div class="grid md:grid-cols-1 gap-8">
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="card p-6 max-w-4xl mx-auto">
+                    <h3 class="text-center text-xl font-semibold mb-4 text-[#0083c9]">Đăng nhập</h3>
+                    <ul class="text-center space-y-4">
+                        <li>
+                            <p class="mt-1 text-gray-600">Đăng kí mật khẩu vào server.</p>
+                            <code class="cmd-code">/register &lt;mật khẩu&gt; &lt;mật khẩu&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Đăng nhập vào server.</p>
+                            <code class="cmd-code">/login &lt;mật khẩu&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Thay đổi mật khẩu.</p>
+                            <code class="cmd-code">/changepassword &lt;mật khẩu cũ&gt; &lt;mật khẩu mới&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Liên kết email.</p>
+                            <code class="cmd-code">/email add &lt;email&gt; &lt;email&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Khôi phục mật khẩu với email đã liên kết.</p>
+                            <code class="cmd-code">/authme email recovery &lt;email&gt;</code>
+                        </li>
+                    </ul>
+                    <p><br></p>
+                    <h3 class="text-center text-xl font-semibold mb-4 text-[#0083c9]">Dịch chuyển</h3>
+                    <ul class="text-center space-y-4">
+                        <li>
+                            <p class="mt-1 text-gray-600">Dịch chuyển về khu vực sảnh (Lobby).</p>
+                            <code class="cmd-code">/warp Lobby</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Dịch chuyển về vị trí trước đó (không back về vị trí chết).</p>
+                            <code class="cmd-code">/back</code>
+                        </li>
+                    </ul>
+                    <p><br></p>
+                    <h3 class="text-center text-xl font-semibold mb-4 text-[#0083c9]">Ngoại hình</h3>
+                    <ul class="text-center space-y-4">
+                        <li>
+                            <p class="mt-1 text-gray-600">Thay skin nhân vật theo tên player.</p>
+                            <code class="cmd-code">/skin &lt;tên player&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Thay skin nhân vật theo url hình ảnh.</p>
+                            <p class="mt-1 text-gray-600">(web upload ảnh: https://freeimage.host/)</p>
+                            <code class="cmd-code">/skin url &lt;url hình ảnh&gt;</code>
+                        </li>
+                        <li>
+                            <p class="mt-1 text-gray-600">Menu lựa chọn skin có sẳn.</p>
+                            <code class="cmd-code">/skin menu</code>
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+				<div class="card p-6 max-w-4xl mx-auto">
                     <h3 class="text-center text-xl font-semibold mb-4 text-[#0083c9]">Đăng nhập</h3>
                     <ul class="text-center space-y-4">
                         <li>
@@ -211,4 +266,5 @@
     </script>
 </body>
 </html>
+
 
