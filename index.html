@@ -278,8 +278,8 @@
             <div class="card p-8 text-center">
                 <p class="mb-4 text-gray-400">Nếu bạn cần hỗ trợ thêm, hãy liên hệ với chúng tôi qua các kênh sau:</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                    <p><b>IP Server:</b> <code class="cmd-code">jemcity.duckdns.org:19670</code></p>
-                    <p><b>Discord:</b> <a href="https://discord.gg/your-discord-link" target="_blank" class="text-[#0077B6] hover:text-[#005A93] font-medium">Tham gia ngay!</a></p>
+                    <p><b>IP Server:</b> <button onclick="copyIP()" class="cmd-code" id="ip-address">jemcity.duckdns.org:19670</button></p>
+                    <p><b>Discord:</b> <a href="https://discord.gg/trVJaR2wwa" target="_blank" class="text-[#0077B6] hover:text-[#005A93] font-medium">Tham gia ngay!</a></p>
                 </div>
             </div>
         </section>
@@ -341,9 +341,38 @@
             });
             headerObserver.observe(header);
         });
+
+        // Hàm sao chép IP
+        function copyIP() {
+            // Lấy phần tử theo ID mới đã sửa
+            const ipElement = document.getElementById('ip-address');
+            if (ipElement) {
+                const ipAddress = ipElement.innerText;
+                fallbackCopyTextToClipboard(ipAddress);
+            } else {
+                console.error('Không tìm thấy phần tử có ID "ip-address".');
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";  // Avoid scrolling to bottom of page in Firefox.
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                alert('IP đã được sao chép!');
+            } catch (err) {
+                alert('Không thể sao chép IP, vui lòng sao chép thủ công.');
+            }
+            document.body.removeChild(textArea);
+        }
     </script>
 </body>
 </html>
+
 
 
 
