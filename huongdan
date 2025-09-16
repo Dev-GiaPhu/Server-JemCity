@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn - Wiki Server Minecraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #292929;
+            color: #007abd;
+        }
+        html {
+            scroll-padding-top: 4rem;  
+        }
+        #background-changer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Thay đổi URL tại đây để đổi ảnh nền đầu trang */
+            background-image: url('https://placehold.co/1920x1080/4F6F7F/E0F2F7?text=JEMCITY');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1.5s ease-in-out;
+        }
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: black;
+            opacity: 0.3;
+        }
+        .card {
+            background-color: transparent;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(100px);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.3);
+            backdrop-filter: blur(0px);
+            background-color: rgba(229, 229, 229, 1);
+        }
+        .btn-primary {
+            background-color: #0077B6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #005A93;
+        }
+        .cmd-code {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #f7f7f7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #0064b4;
+            white-space: nowrap;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.9s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Background Changer -->
+    <div id="background-changer">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <header class="text-white pt-32 pb-18 px-4 flex flex-col items-center justify-center text-center relative">
+        <div class="relative z-10 flex flex-col items-center">
+            <h1 class="text-4xl sm:text-4xl font-extrabold mb-1 animate-pulse">WIKI SERVER</h1>
+            <h1 class="text-8xl sm:text-9xl font-extrabold mb-8">JEMCITY</h1>
+            <p class="text-lg sm:text-1xl font-light max-w-2xl mb-8">
+                Đây là nơi bạn tìm thấy tất cả thông tin, các lệnh cơ bản đến hướng dẫn chi tiết về các tính năng độc đáo.
+            </p>
+            <a href="#huong-dan" class="btn-primary text-base sm:text-lg mb-8 animate-bounce">Khám Phá Ngay</a>
+        </div>
+    </header>
+
+    <nav class="bg-sky-900 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-[#ffffff]">Server Wiki</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#quy-tac" class="text-[#ffffff] hover:text-[#92d9ff] px-3 py-2 rounded-md font-medium">Nội Quy</a>
+                        <a href="index.html#lenh" class="text-[#ffffff] hover:text-[#92d9ff] px-3 py-2 rounded-md font-medium">Lệnh</a>
+                        <a href="index.html#plugins" class="text-[#ffffff] hover:text-[#92d9ff] px-3 py-2 rounded-md font-medium">Plugins</a>
+                        <a href="index.html#lien-he" class="text-[#ffffff] hover:text-[#92d9ff] px-3 py-2 rounded-md font-medium">Liên Hệ</a>
+                        <a href="#" class="text-[#ffffff] hover:text-[#92d9ff] px-3 py-2 rounded-md font-medium">Hướng Dẫn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="noi-dung" class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <section id="huong-dan" class="mb-16 fade-in" data-bg-image="https://placehold.co/1920x1080/4F6F7F/E0F2F7?text=Hướng%20Dẫn">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#0093e1]">HƯỚNG DẪN</h2>
+            <div class="grid md:grid-cols-2 gap-9">
+                <!-- Card Hướng dẫn 1 -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-[#0083c9]">Cách tham gia server</h3>
+                    <p class="text-gray-600 mb-4">Hướng dẫn chi tiết từng bước để bạn có thể vào server, đăng ký tài khoản và bắt đầu cuộc phiêu lưu của mình.</p>
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <!-- Thay đổi đường dẫn video YouTube tại đây -->
+                        <iframe class="w-full h-auto rounded-lg shadow-xl" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Card Hướng dẫn 2 -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-[#0083c9]">Cài đặt Lands để bảo vệ đất</h3>
+                    <p class="text-gray-600 mb-4">Tìm hiểu cách sử dụng plugin Lands để bảo vệ những công trình của bạn khỏi bị phá hoại.</p>
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <!-- Thay đổi đường dẫn video YouTube tại đây -->
+                        <iframe class="w-full h-auto rounded-lg shadow-xl" src="https://www.youtube.com/embed/yT1mE3oH7qM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Card Hướng dẫn 3 -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-[#0083c9]">Hệ thống giao dịch TradeSystem</h3>
+                    <p class="text-gray-600 mb-4">Hướng dẫn giao dịch an toàn và hiệu quả với các người chơi khác bằng TradeSystem.</p>
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <!-- Thay đổi đường dẫn video YouTube tại đây -->
+                        <iframe class="w-full h-auto rounded-lg shadow-xl" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Card Hướng dẫn 4 -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-[#0083c9]">Một số lệnh cơ bản bạn nên biết</h3>
+                    <p class="text-gray-600 mb-4">Tổng hợp các lệnh hữu ích để bạn có trải nghiệm chơi game tốt hơn.</p>
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <!-- Thay đổi đường dẫn video YouTube tại đây -->
+                        <iframe class="w-full h-auto rounded-lg shadow-xl" src="https://www.youtube.com/embed/z-gC2c3Bq9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-8 mt-12 text-center text-gray-500 text-sm">
+        <p>&copy; JemCity. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundChanger = document.getElementById('background-changer');
+            const sections = document.querySelectorAll('section.fade-in');
+            const header = document.querySelector('header');
+
+            const defaultBg = "url('https://placehold.co/1920x1080/4F6F7F/E0F2F7?text=JEMCITY')";
+
+            const contentObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bgImage = entry.target.getAttribute('data-bg-image');
+                        if (bgImage) {
+                            backgroundChanger.style.backgroundImage = `url('${bgImage}')`;
+                        }
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 
+            });
+
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        backgroundChanger.style.backgroundImage = defaultBg;
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            });
+
+            sections.forEach(section => {
+                contentObserver.observe(section);
+            });
+            headerObserver.observe(header);
+        });
+
+        // Hàm sao chép IP
+        function copyIP() {
+            const ipElement = document.getElementById('ip-address');
+            if (ipElement) {
+                const ipAddress = ipElement.innerText;
+                fallbackCopyTextToClipboard(ipAddress);
+            } else {
+                console.error('Không tìm thấy phần tử có ID "ip-address".');
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";  
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                alert('IP đã được sao chép!');
+            } catch (err) {
+                alert('Không thể sao chép IP, vui lòng sao chép thủ công.');
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
