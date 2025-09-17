@@ -35,10 +35,10 @@
             /* Thêm hiệu ứng kính mờ vào đây */
             backdrop-filter: blur(1px);
             /* Thêm backdrop-filter vào transition để chuyển tiếp mượt mà */
-            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
+            transition: transform 0.8s ease, box-shadow 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 10px 25px rgba(0, 150, 255, 0.3);
             backdrop-filter: blur(0px);
             background-color: rgba(229, 229, 229, 1);
@@ -212,9 +212,9 @@
                     if (entry.isIntersecting) {
                         // Thêm hiệu ứng trễ để các thẻ xuất hiện tuần tự
                         setTimeout(() => {
-                            entry.target.classList.remove('opacity-0', 'translate-y-10');
+                            entry.target.classList.remove('opacity-0', 'translate-y-5');
                             entry.target.classList.add('opacity-100', 'translate-y-0');
-                        }, 300 * Array.from(cards).indexOf(entry.target)); // 200ms trễ
+                        }, 200 * Array.from(cards).indexOf(entry.target)); // 200ms trễ
                         observer.unobserve(entry.target);
                     }
                 });
